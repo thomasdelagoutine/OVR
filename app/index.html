@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="ovrApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="library/js/angular.min.js"></script>
+    <script src="library/js/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="library/js/jquery-3.1.1.js"></script>
+    <script src="style/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBWtVAwETTsTiGI9V-V8ZWKdexJTMUYujk",
+            authDomain: "onvarouler-52e89.firebaseapp.com",
+            databaseURL: "https://onvarouler-52e89.firebaseio.com",
+            projectId: "onvarouler-52e89",
+            storageBucket: "onvarouler-52e89.appspot.com",
+            messagingSenderId: "509954642214"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" type="text/css" href="style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <title>OVR</title>
+    <link rel="shortcut icon" href="">
+</head>
+<body class="cd-body" ng-controller="mainCtrl">
+<div class="col-xs-18 col-md-12 cd-header">
+    <div class="col-md-3 "></div>
+    <h1 class="col-md-6 elec-welcome cd-header-title">OVR</h1>
+    <div class="col-md-3"><span class="elec-deco" ng-click="deco()">
+        <a style="pointer-events: none; color: white">Déconnexion</a>
+    </span></div>
+</div>
+<div ng-view></div>
+</body>
+</html>
