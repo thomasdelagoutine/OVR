@@ -14,7 +14,7 @@ app.config(['$routeProvider',
             })
             .when('/connexion', {
                 templateUrl: 'modules/connexion/authentification.html',
-                controller: 'authController'
+                controller: 'authController as auth'
             })
             .when('/inscription', {
                 templateUrl: 'views/inscription.html',

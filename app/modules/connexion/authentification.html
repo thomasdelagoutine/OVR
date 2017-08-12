@@ -1,3 +1,39 @@
-<div class="ovr-authentication">
-    COUCOU
+<div ng-controller="authController" class="ovr-authentication">
+    <!--Connexion-->
+    <form class="form-group col-md-2 col-md-offset-5 ovr-form">
+        <div >
+            <input class="form-control" type="text" placeholder="Identifiant" ng-model="login">
+            <br/>
+            <input class="form-control ovr-form" type="password" placeholder="Mot de passe" ng-model="password">
+            <br/>
+            <button class="btn btn-block ovr-connect-button" ng-click="connexion()"><span class="ovr-text-connexion">Connexion</span></button>
+            <br/>
+            <a class="ovr-inscription-link " ng-click="inscription()" style="text-decoration:none">S'inscrire</a>
+        </div>
+    </form>
+    <!--Les nuages-->
+    <div class="ovr-mountain">
+        <div class="ovr-mountain-top">
+            <div class="ovr-mountain-cap-1"></div>
+            <div class="ovr-mountain-cap-2"></div>
+            <div class="ovr-mountain-cap-3"></div>
+        </div>
+    </div>
+    <div class="ovr-mountain-two">
+        <div class="ovr-mountain-top">
+            <div class="ovr-mountain-cap-1"></div>
+            <div class="ovr-mountain-cap-2"></div>
+            <div class="ovr-mountain-cap-3"></div>
+        </div>
+    </div>
+    <div class="ovr-mountain-three">
+        <div class="ovr-mountain-top">
+            <div class="ovr-mountain-cap-1"></div>
+            <div class="ovr-mountain-cap-2"></div>
+            <div class="ovr-mountain-cap-3"></div>
+        </div>
+    </div>
+
+    <div class="ovr-cloud"></div>
+</div>
 </div>

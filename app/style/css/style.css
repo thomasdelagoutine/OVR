@@ -1,0 +1,107 @@
+:root {
+    --ovr-blue: #708D81;
+    --ovr-white: #FDF5E2;
+    --ovr-red: #821122;
+    --ovr-black: #333745;
+    --ovr-yellow: #F6F792;
+    --ovr-brown: #A65C32;
+    --ovr-dark-blue: #001427;
+}
+
+@font-face {
+    font-family: subTitleFont;
+    src: url(title.ttf);
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0; padding: 0;
+}
+body {
+    display : table;
+    width: 100%;
+}
+footer {
+    display : table-row;
+    height: 20px; /* à titre d'exemple */
+}
+
+.ovr{
+    background-color: white;
+}
+
+.ovr-authentication{
+
+}
+
+.ovr-connect-button{
+    background-color: wheat;
+    font-family: subTitleFont;
+    padding-top: 25px;
+    padding-bottom: 0px;
+
+}
+
+.ovr-text-connexion{
+    font-size: 16pt;
+}
+
+.ovr-inscription-link{
+    width: 60%;
+    background-color: transparent;
+    margin-left: 37%;
+    color: black;
+
+
+}
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.ovr-form{
+    padding-top: 5%;
+}
+
+.ovr-header{
+    background-color: var(--ovr-blue);
+    height: 18%;
+}
+
+.ovr-header-title{
+    text-align: center;
+    color: wheat;
+    font-size: 45pt;
+    font-weight: 800;
+    letter-spacing: 11px;
+
+}
+.ovr-header-sub-title{
+    font-family: subTitleFont;
+    text-align: center;
+    color: wheat;
+    font-size: 14pt;
+    font-weight: 800;
+    letter-spacing: 5px;
+    word-spacing: 25px;
+    padding-left: 16px;
+}
+.ovr-body{
+    font-family: "Nirmala UI";
+    background-color: var(--ovr-white);
+    height: 79%;
+}
+.ovr-footer{
+    background-color: var(--ovr-blue);
+    height: 3%;
+    text-align: center;
+}
+
+

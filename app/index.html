@@ -22,19 +22,19 @@
         firebase.initializeApp(config);
     </script>
     <link rel="stylesheet" type="text/css" href="style/css/style.css">
+    <link rel="stylesheet" type="text/css" href="style/css/montain.css">
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="style/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>OVR</title>
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="img/header-bike.png">
 </head>
 <body class="cd-body" ng-controller="mainCtrl">
-<div class="col-xs-18 col-md-12 cd-header">
-    <div class="col-md-3 "></div>
-    <h1 class="col-md-6 elec-welcome cd-header-title">OVR</h1>
-    <div class="col-md-3"><span class="elec-deco" ng-click="deco()">
-        <a style="pointer-events: none; color: white">Déconnexion</a>
-    </span></div>
+<div class="col-xs-12 col-md-12 ovr-header">
+    <h1 class="ovr-header-title">OVR</h1>
+    <p class="ovr-header-sub-title">On Va Rouler</p>
 </div>
-<div ng-view></div>
+<div ng-view class="col-xs-12 col-md-12 ovr-body"></div>
+<footer class="col-xs-12 col-md-12 ovr-footer">2017 - Thomas de Lagoutine</footer>
 </body>
 </html>
