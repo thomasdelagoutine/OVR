@@ -13,7 +13,7 @@ app.config(['$routeProvider',
                 controller: 'dashBoardController'
             })
             .when('/connexion', {
-                templateUrl: 'views/connexion.html',
+                templateUrl: 'modules/connexion/authentification.html',
                 controller: 'authController'
             })
             .when('/inscription', {

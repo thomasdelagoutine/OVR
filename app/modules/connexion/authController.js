@@ -1,3 +1,3 @@
-/**
- * Created by Thomas on 23/07/2017.
- */
+app.controller('authController', ['$scope',
+    function ($scope) {
+    }]);
