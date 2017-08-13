@@ -6,6 +6,7 @@
     <script src="app.js"></script>
     <script src="mainController.js"></script>
     <script src="modules/connexion/authController.js"></script>
+    <script src="modules/registration/registrationController.js"></script>
     <script src="library/js/jquery-3.1.1.js"></script>
     <script src="style/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -20,6 +21,9 @@
             messagingSenderId: "509954642214"
         };
         firebase.initializeApp(config);
+        console.log(firebase.app().name);
+        var defaultStorage = firebase.storage();
+        var defaultDatabase = firebase.database();
     </script>
     <link rel="stylesheet" type="text/css" href="style/css/style.css">
     <link rel="stylesheet" type="text/css" href="style/css/montain.css">

@@ -16,9 +16,9 @@ app.config(['$routeProvider',
                 templateUrl: 'modules/connexion/authentification.html',
                 controller: 'authController as auth'
             })
-            .when('/inscription', {
-                templateUrl: 'views/inscription.html',
-                controller: 'inscriptionController'
+            .when('/registration', {
+                templateUrl: 'modules/registration/registration.html',
+                controller: 'registrationController'
             })
             .otherwise({
                 redirectTo: '/connexion'

@@ -35,12 +35,29 @@ footer {
 
 }
 
-.ovr-connect-button{
+
+.ovr-button{
+    display: block;
+    width: 100%;
     background-color: wheat;
     font-family: subTitleFont;
-    padding-top: 25px;
-    padding-bottom: 0px;
-
+    padding-top: 7px;
+    padding-bottom: 2px;
+    margin-bottom: 0;
+    font-size: 18pt;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .ovr-text-connexion{
@@ -90,7 +107,7 @@ a:hover{
     font-size: 14pt;
     font-weight: 800;
     letter-spacing: 5px;
-    word-spacing: 25px;
+    word-spacing: 4px;
     padding-left: 16px;
 }
 .ovr-body{
@@ -102,6 +119,34 @@ a:hover{
     background-color: var(--ovr-blue);
     height: 3%;
     text-align: center;
+}
+
+.ovr-registration{
+    margin-top: 3%;
+}
+
+.ovr-registration-confirmation-message{
+    text-align: center;
+    color: black;
+    font-size: 18pt;
+    font-family: inherit;
+}
+
+.ovr-registration-confirmation-message-head{
+    font-family: subTitleFont;
+    text-align: center;
+}
+
+.ovr-info-danger{
+    opacity: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12pt;
+    background: var(--ovr-red);
+    color: wheat;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 
