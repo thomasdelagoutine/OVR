@@ -1,0 +1,77 @@
+<div class="col-md-12" ng-controller="registrationController">
+    <div ng-show="emailSent">
+        <h1 class="ovr-registration-confirmation-message-head">Parfait inscription OK</h1>
+        <h3 class="ovr-registration-confirmation-message">Un email de confirmation vient de vous être envoyé ! </h3>
+        <h3 class="ovr-registration-confirmation-message">Consultez vos emails et cliquez sur le lien de confirmation </h3>
+        <h3 class="ovr-registration-confirmation-message" style="font-style: italic">PS : Il est possible que le mail tarde un peu à arriver, donc TKT :)</h3>
+        <div class="ovr-mountain">
+            <div class="ovr-mountain-top">
+                <div class="ovr-mountain-cap-1"></div>
+                <div class="ovr-mountain-cap-2"></div>
+                <div class="ovr-mountain-cap-3"></div>
+            </div>
+        </div>
+        <div class="ovr-mountain-two">
+            <div class="ovr-mountain-top">
+                <div class="ovr-mountain-cap-1"></div>
+                <div class="ovr-mountain-cap-2"></div>
+                <div class="ovr-mountain-cap-3"></div>
+            </div>
+        </div>
+        <div class="ovr-mountain-three">
+            <div class="ovr-mountain-top">
+                <div class="ovr-mountain-cap-1"></div>
+                <div class="ovr-mountain-cap-2"></div>
+                <div class="ovr-mountain-cap-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3 ovr-registration" ng-hide="emailSent">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="login" class="col-sm-2 control-label">Login</label>
+                <div class="col-sm-10">
+                    <input ng-model="login" type="text" class="form-control" id="login" placeholder="login">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="prenom" class="col-sm-2 control-label">Prénom</label>
+                <div class="col-sm-10">
+                    <input ng-model="surname" type="text" class="form-control" id="prenom" placeholder="Prénom">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nom" class="col-sm-2 control-label">Nom</label>
+                <div class="col-sm-10">
+                    <input ng-model="name" type="text" class="form-control" id="nom" placeholder="Nom">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="e-mail" class="col-sm-2 control-label">E-Mail</label>
+                <div class="col-sm-10">
+                    <input ng-model="email" type="email" class="form-control" id="e-mail" placeholder="E-Mail">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">Mot de passe</label>
+                <div class="col-sm-10">
+                    <input ng-model="password" type="password" class="form-control" id="password" placeholder="Mot de passe">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password2" class="col-sm-2 control-label">Confirmez le mot de passe</label>
+                <div class="col-sm-10">
+                    <input ng-model="password2" type="password" class="form-control" id="password2" placeholder="Confirmez le mot de passe">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="register()" type="submit" class="ovr-button">Inscription</button>
+                </div>
+            </div>
+            <div class="form-group">
+                    <p class=" ovr-info-danger" ng-show="errorRegistration">{{inscriptionError}}</p>
+            </div>
+        </form>
+    </div>
+</div>
