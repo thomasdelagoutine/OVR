@@ -7,6 +7,7 @@
     <script src="mainController.js"></script>
     <script src="modules/connexion/authController.js"></script>
     <script src="modules/registration/registrationController.js"></script>
+    <script src="modules/menu/mainMenuController.js"></script>
     <script src="library/js/jquery-3.1.1.js"></script>
     <script src="style/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -37,6 +38,7 @@
 <div class="col-xs-12 col-md-12 ovr-header">
     <h1 class="ovr-header-title">OVR</h1>
     <p class="ovr-header-sub-title">On Va Rouler</p>
+    <button class="ovr-button-deco" ng-show="checkIfUserSignIn()" ng-click="signOut()">Deconnexion</button>
 </div>
 <div ng-view class="col-xs-12 col-md-12 ovr-body"></div>
 <footer class="col-xs-12 col-md-12 ovr-footer">2017 - Thomas de Lagoutine</footer>

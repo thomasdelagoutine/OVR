@@ -60,6 +60,22 @@ footer {
     border-radius: 4px;
 }
 
+.ovr-button-deco{
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    background-color: wheat;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: subTitleFont;
+    font-size: 14pt;
+    padding-top: 3px;
+}
+
+
 .ovr-text-connexion{
     font-size: 16pt;
 }
@@ -128,7 +144,7 @@ a:hover{
 .ovr-registration-confirmation-message{
     text-align: center;
     color: black;
-    font-size: 18pt;
+    font-size: 14pt;
     font-family: inherit;
 }
 

@@ -5,13 +5,13 @@ app.controller('registrationController', ['$scope', '$location',
     function ($scope, $location) {
         $scope.inscriptionError = "";
         $scope.errorRegistration = false;
-        $scope.emailSent = true;
+        $scope.emailSent = false;
 
         /**
          * Function used to register a new user. Works with E-mail.
          */
-        $scope.register = function () {
-            console.log("blabla");
+        $scope.register = function (event) {
+            event.preventDefault();
             if (($scope.login === undefined || $scope.name === undefined ||
                 $scope.surname === undefined || $scope.email === undefined ||
                 $scope.password === undefined || $scope.password2 === undefined) ||
@@ -27,16 +27,23 @@ app.controller('registrationController', ['$scope', '$location',
                     firebase.auth().currentUser.sendEmailVerification().then(function () {
                         // Email Verification sent!
                         console.log('Verification du mail envoyé !');
-                        $scope.emailSent = true;
-                        $scope.$apply();
+                        firebase.auth().signOut().then(function() {
+                            $scope.emailSent = true;
+                            $scope.$digest();
+                        }).catch(function(error) {
+                            // An error happened.
+                        });
+
                     }).catch(function (error) {
                         console.log(error);
+                        $scope.inscriptionError = error.message;
                     });
                 }).catch(function (error) {
                     // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     console.log(errorCode + " Message : " + errorMessage);
+                    $scope.inscriptionError = error.message;
                 });
             }
         }

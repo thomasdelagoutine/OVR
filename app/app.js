@@ -20,6 +20,10 @@ app.config(['$routeProvider',
                 templateUrl: 'modules/registration/registration.html',
                 controller: 'registrationController'
             })
+            .when('/mainMenu', {
+                templateUrl: 'modules/menu/mainMenu.html',
+                controller: 'mainMenuController'
+            })
             .otherwise({
                 redirectTo: '/connexion'
             });

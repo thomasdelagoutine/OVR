@@ -1,17 +1,17 @@
 <div ng-controller="authController" class="ovr-authentication">
     <!--Connexion-->
     <form class="form-group col-md-2 col-md-offset-5 ovr-form">
-        <div >
-            <input class="form-control" type="text" placeholder="Identifiant" ng-model="login">
-            <br/>
-            <input class="form-control ovr-form" type="password" placeholder="Mot de passe" ng-model="password">
-            <br/>
-            <button class="ovr-button" ng-click="connexion()"><span class="ovr-text-connexion">Connexion</span></button>
-            <br/>
-            <a class="ovr-inscription-link " ng-click="registration()" style="text-decoration:none">S'inscrire</a>
+        <input class="form-control" type="email" required autocomplete="email" placeholder="e-mail" ng-model="email">
+        <br/>
+        <input class="form-control ovr-form" required autocomplete="password" type="password" placeholder="Mot de passe" ng-model="password">
+        <br/>
+        <button class="ovr-button" ng-click="signIn()"><span class="ovr-text-connexion">Connexion</span></button>
+        <br/>
+        <a class="ovr-inscription-link " ng-click="registration()" style="text-decoration:none">S'inscrire</a>
+        <div class="form-group">
+            <p class=" ovr-info-danger" ng-show="errorSignIn">{{signInError}}</p>
         </div>
     </form>
-    <p>valeur : {{coucou}}</p>
     <!--Les nuages-->
     <div class="ovr-mountain">
         <div class="ovr-mountain-top">
