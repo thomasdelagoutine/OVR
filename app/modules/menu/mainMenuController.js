@@ -3,9 +3,11 @@
  */
 app.controller('mainMenuController', ['$scope', '$location',
     function ($scope, $location) {
-        if (!$scope.$parent.checkIfUserSignIn()) {
+        var user = firebase.auth().currentUser;
+        if (!user) {
             $location.path("/connexion");
-            $scope.$digest();
+            
         }
+
     }]);
 

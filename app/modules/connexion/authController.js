@@ -25,7 +25,7 @@ app.controller("authController", ["$scope", "$location",
             firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
                 console.log("Ok");
                 $location.path("/mainMenu");
-                $scope.$digest();
+                $scope.$apply();
             }).catch(function (error) {
                 var errorCode = error.code;
                 var errorMessage = error.message;

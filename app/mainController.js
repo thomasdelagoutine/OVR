@@ -26,7 +26,6 @@ app.controller('mainCtrl', ['$scope', '$location',
          */
         $scope.checkIfUserSignIn = function () {
             var user = firebase.auth().currentUser;
-
             if (user) {
                 return true;
             } else {
