@@ -24,6 +24,10 @@ app.config(['$routeProvider',
                 templateUrl: 'modules/menu/mainMenu.html',
                 controller: 'mainMenuController'
             })
+            .when('/profile', {
+                templateUrl : 'modules/profile/profile.html',
+                controller: 'profileController'
+            })
             .otherwise({
                 redirectTo: '/connexion'
             });

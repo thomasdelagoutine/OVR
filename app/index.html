@@ -8,6 +8,7 @@
     <script src="modules/connexion/authController.js"></script>
     <script src="modules/registration/registrationController.js"></script>
     <script src="modules/menu/mainMenuController.js"></script>
+    <script src="modules/profile/profileController.js"></script>
     <script src="library/js/jquery-3.1.1.js"></script>
     <script src="style/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -28,6 +29,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="style/css/style.css">
     <link rel="stylesheet" type="text/css" href="style/css/montain.css">
+    <link rel="stylesheet" type="text/css" href="modules/profile/profile.css">
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style/css/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="style/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -38,7 +40,25 @@
 <div class="col-xs-12 col-md-12 ovr-header">
     <h1 class="ovr-header-title">OVR</h1>
     <p class="ovr-header-sub-title">On Va Rouler</p>
-    <button class="ovr-button-deco" ng-show="checkIfUserSignIn()" ng-click="signOut()">Deconnexion</button>
+    <div class="ovr-profile-menu" ng-show="checkIfUserSignIn()">
+        <span class="ovr-profile-menu-name">{{user.displayName}}</span>
+        <img class="ovr-profile-menu-photo" src="img/default_profile.png"/>
+        <span class="ovr-profile-menu-arrow" ng-click="displayProfileMenu()">
+            <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+    <div ng-show="isDisplayProfileMenu" class="ovr-displayed-profile-menu">
+        <ul class="ovr-profile-menu-list" >
+            <li><span>Mes propositions</span></li>
+            <li><span>Mes participation</span></li>
+            <li><span>Mes avantages</span></li>
+            <li data-ng-click="openProfile()"><span >Mon profil</span></li>
+            <li data-ng-click="signOut()"><span >Se deconnecter</span></li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+
+<!--<button class="ovr-button-deco">Deconnexion</button>-->
 </div>
 <div ng-view class="col-xs-12 col-md-12 ovr-body"></div>
 <footer class="col-xs-12 col-md-12 ovr-footer">2017 - Thomas de Lagoutine</footer>

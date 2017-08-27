@@ -13,30 +13,31 @@
     src: url(title.ttf);
 }
 
-
 html, body {
     height: 100%;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-    display : table;
+    display: table;
     width: 100%;
 }
+
 footer {
-    display : table-row;
+    display: table-row;
     height: 20px; /* à titre d'exemple */
 }
 
-.ovr{
+.ovr {
     background-color: white;
 }
 
-.ovr-authentication{
+.ovr-authentication {
 
 }
 
-
-.ovr-button{
+.ovr-button {
     display: block;
     width: 100%;
     background-color: wheat;
@@ -60,10 +61,76 @@ footer {
     border-radius: 4px;
 }
 
-.ovr-button-deco{
+.ovr-profile-menu {
+    position: absolute;
+    top: 23%;
+    right: 10%;
+    background-color: transparent;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 11pt;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 1px;
+    z-index: 1;
+}
+
+.ovr-header-profile-menu {
+    background-color: wheat;
+
+}
+
+.ovr-profile-menu-list {
+    background-color: wheat;
+    list-style-type: none;
+    float: left;
+    text-align: left;
+}
+
+.ovr-profile-menu-list li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    white-space: nowrap;
+    margin-left: -40px;
+    padding-right: 130px;
+    cursor: pointer;
+
+}
+
+.ovr-profile-menu-list li span {
+    margin-left: 40px;
+
+}
+
+.ovr-profile-menu-list li:hover {
+    background-color: var(--ovr-blue);
+}
+
+.ovr-profile-menu-name {
+    padding-right: 10px;
+    color: wheat;
+    font-weight: bold;
+}
+
+.ovr-displayed-profile-menu {
+    z-index: 2;
+    position: absolute;
+    margin-top: 3%;
+    padding-right: 10%;
+}
+
+.ovr-profile-menu-arrow {
+    text-align: center;
+    padding-left: 10px;
+    color: wheat;
+    cursor: pointer;
+}
+
+.ovr-button-deco {
     position: absolute;
     top: 35%;
-    right: 10%;
+    right: 88%;
     background-color: wheat;
     font-weight: normal;
     text-align: center;
@@ -75,48 +142,53 @@ footer {
     padding-top: 3px;
 }
 
+.ovr-profile-menu-photo {
+    width: 15%;
+    border-radius: 20px;
+}
 
-.ovr-text-connexion{
+.ovr-text-connexion {
     font-size: 16pt;
 }
 
-.ovr-inscription-link{
+.ovr-inscription-link {
     width: 60%;
     background-color: transparent;
     margin-left: 37%;
     color: black;
 
-
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: gray;
     text-decoration: none;
     cursor: pointer;
 }
 
-
-.ovr-form{
+.ovr-form {
     padding-top: 5%;
 }
 
-.ovr-header{
+.ovr-header {
     background-color: var(--ovr-blue);
-    height: 18%;
+    height: 12%;
 }
 
-.ovr-header-title{
+.ovr-header-title {
     text-align: center;
     color: wheat;
-    font-size: 45pt;
+    font-size: 33pt;
     font-weight: 800;
     letter-spacing: 11px;
+    margin-top: 2px;
 
 }
-.ovr-header-sub-title{
+
+.ovr-header-sub-title {
     font-family: subTitleFont;
     text-align: center;
     color: wheat;
@@ -126,34 +198,36 @@ a:hover{
     word-spacing: 4px;
     padding-left: 16px;
 }
-.ovr-body{
+
+.ovr-body {
     font-family: "Nirmala UI";
     background-color: var(--ovr-white);
-    height: 79%;
+    height: 85%;
 }
-.ovr-footer{
+
+.ovr-footer {
     background-color: var(--ovr-blue);
     height: 3%;
     text-align: center;
 }
 
-.ovr-registration{
+.ovr-registration {
     margin-top: 3%;
 }
 
-.ovr-registration-confirmation-message{
+.ovr-registration-confirmation-message {
     text-align: center;
     color: black;
     font-size: 14pt;
     font-family: inherit;
 }
 
-.ovr-registration-confirmation-message-head{
+.ovr-registration-confirmation-message-head {
     font-family: subTitleFont;
     text-align: center;
 }
 
-.ovr-info-danger{
+.ovr-info-danger {
     opacity: 1;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -165,13 +239,13 @@ a:hover{
     font-weight: bold;
 }
 
-.ovr-main-tile{
+.ovr-main-tile {
     background-color: transparent;
     margin-top: 5%;
     height: 200px;
 }
 
-.ovr-main-img{
+.ovr-main-img {
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
@@ -182,22 +256,23 @@ a:hover{
 }
 
 /*.ovr-main-img:hover{*/
-    /*transition-property: margin-left,margin-top, width;*/
-    /*width: 82%;*/
-    /*margin-left: 9%;*/
-    /*margin-top: 4%;*/
-    /*margin-right: 4%;*/
-    /*opacity: 0.5;*/
+/*transition-property: margin-left,margin-top, width;*/
+/*width: 82%;*/
+/*margin-left: 9%;*/
+/*margin-top: 4%;*/
+/*margin-right: 4%;*/
+/*opacity: 0.5;*/
 
 /*}*/
 
-.ovr-main-title-choice{
+.ovr-main-title-choice {
     background: wheat;
     position: absolute;
     top: 100%;
+    right: 9%;
     left: 9%;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 28%;
+    padding-right: 28%;
     padding-top: 1%;
     padding-bottom: 1%;
     font-family: subTitleFont;
@@ -205,10 +280,11 @@ a:hover{
     font-size: 18pt;
     cursor: pointer;
     z-index: 1;
+    float: right;
 }
 
-.ovr-main-title-choice:hover ~ .ovr-main-img{
-    transition-property: margin-left,margin-top, width;
+.ovr-main-title-choice:hover ~ .ovr-main-img {
+    transition-property: margin-left, margin-top, width;
     width: 82%;
     margin-left: 9%;
     margin-top: 4%;

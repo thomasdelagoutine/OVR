@@ -8,11 +8,14 @@ app.run(function ($rootScope) {
 
 app.controller('mainCtrl', ['$scope', '$location',
     function ($scope, $location) {
+        //Variables
+        $scope.isDisplayProfileMenu = false;
 
         /**
          * General function used to sign out current user.
          */
         $scope.signOut = function () {
+            $scope.displayProfileMenu();
             firebase.auth().signOut().then(function () {
                 $location.path("/connexion");
                 $scope.$apply();
@@ -25,14 +28,25 @@ app.controller('mainCtrl', ['$scope', '$location',
          * Function to check if the user is connected.
          */
         $scope.checkIfUserSignIn = function () {
-            var user = firebase.auth().currentUser;
-            if (user) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+            $scope.user = firebase.auth().currentUser;
+            return $scope.user;
+        };
 
+
+        /**
+         * Function to display the menu.
+         */
+        $scope.displayProfileMenu = function () {
+            $scope.isDisplayProfileMenu = !$scope.isDisplayProfileMenu;
+        };
+
+        /**
+         *
+         */
+        $scope.openProfile = function () {
+            $scope.displayProfileMenu();
+            $location.path("/profile");
+        }
     }]);
 
 

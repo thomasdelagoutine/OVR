@@ -12,39 +12,63 @@ app.controller('registrationController', ['$scope', '$location',
          */
         $scope.register = function (event) {
             event.preventDefault();
-            if (($scope.login === undefined || $scope.name === undefined ||
+            if (($scope.name === undefined ||
                 $scope.surname === undefined || $scope.email === undefined ||
                 $scope.password === undefined || $scope.password2 === undefined) ||
-                ($scope.login === "" || $scope.name === "" ||
+                ($scope.name === "" ||
                 $scope.surname === "" || $scope.email === "" ||
                 $scope.password === "" || $scope.password2 === "")) {
                 $scope.inscriptionError = "Renseignez tous les champs";
                 $scope.errorRegistration = true;
             }
             else {
-                $scope.errorRegistration = false;
-                firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function () {
-                    firebase.auth().currentUser.sendEmailVerification().then(function () {
-                        // Email Verification sent!
-                        console.log('Verification du mail envoyé !');
-                        firebase.auth().signOut().then(function() {
-                            $scope.emailSent = true;
-                            $scope.$digest();
-                        }).catch(function(error) {
-                            // An error happened.
+                if ($scope.password !== $scope.password2) {
+                    $scope.inscriptionError = "Les mots de passes sont différents !";
+                    $scope.errorRegistration = true;
+                }
+                else {
+                    $scope.errorRegistration = false;
+                    firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function () {
+                        var user = firebase.auth().currentUser;
+                        user.updateProfile({
+                            displayName: $scope.surname + " " + $scope.name
+                        }).then(function () {
+                            user.sendEmailVerification().then(function () {
+                                // Email Verification sent!
+                                console.log('Verification du mail envoyé !');
+                                firebase.auth().signOut().then(function () {
+                                    $scope.emailSent = true;
+                                    $scope.$digest();
+                                }).catch(function (error) {
+                                    console.log(error);
+                                    $scope.inscriptionError = error.message;
+                                    $scope.errorRegistration = true;
+                                    $scope.$digest()
+                                });
+
+                            }).catch(function (error) {
+                                console.log(error);
+                                $scope.inscriptionError = error.message;
+                                $scope.errorRegistration = true;
+                                $scope.$digest();
+                            });
+                        }).catch(function (error) {
+                            console.log(error);
+                            $scope.inscriptionError = error.message;
+                            $scope.errorRegistration = true;
+                            $scope.$digest()
                         });
 
                     }).catch(function (error) {
-                        console.log(error);
+                        // Handle Errors here.
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log(errorCode + " Message : " + errorMessage);
                         $scope.inscriptionError = error.message;
+                        $scope.errorRegistration = true;
+                        $scope.$digest();
                     });
-                }).catch(function (error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    console.log(errorCode + " Message : " + errorMessage);
-                    $scope.inscriptionError = error.message;
-                });
+                }
             }
         }
     }]);
