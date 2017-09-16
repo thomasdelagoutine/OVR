@@ -33,10 +33,6 @@ footer {
     background-color: white;
 }
 
-.ovr-authentication {
-
-}
-
 .ovr-button {
     display: block;
     width: 100%;
@@ -60,6 +56,30 @@ footer {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+
+.ovr-button-mini {
+    display: block;
+    width: 100%;
+    background-color: wheat;
+    font-family: subTitleFont;
+    margin-bottom: 0;
+    font-size: 13pt;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
 
 .ovr-profile-menu {
     position: absolute;

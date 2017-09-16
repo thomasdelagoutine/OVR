@@ -26,6 +26,8 @@
         console.log(firebase.app().name);
         var defaultStorage = firebase.storage();
         var defaultDatabase = firebase.database();
+        var storageRef = defaultStorage.ref();
+        var imagesRef = storageRef.child('photo/profile');
     </script>
     <link rel="stylesheet" type="text/css" href="style/css/style.css">
     <link rel="stylesheet" type="text/css" href="style/css/montain.css">

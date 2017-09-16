@@ -1,0 +1,40 @@
+.ovr-profile-page-title {
+    text-align: center;
+    font-size: 33pt;
+    font-weight: 800;
+    letter-spacing: 11px;
+    font-family: subTitleFont;
+    color: var(--ovr-black);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    user-select: none;
+}
+
+.ovr-profile-page-part-title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
+    color: var(--ovr-black);
+    user-select: none;
+    margin-bottom: 2%;
+}
+
+.ovr-profile-page-left-part {
+    border-right: 1px solid var(--ovr-black);
+
+}
+
+.ovr-profile-page-right-part {
+
+}
+
+.ovr-profile-age-button-photo {
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+.ovr-profile-photo {
+    max-width: 80%;
+    height: auto;
+
+}
