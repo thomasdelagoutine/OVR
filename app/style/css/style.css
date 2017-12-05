@@ -79,7 +79,9 @@ footer {
     border-radius: 4px;
 }
 
-
+.ovr-checkbox-zone{
+    margin-top: 10px;
+}
 
 .ovr-profile-menu {
     position: absolute;
@@ -94,6 +96,10 @@ footer {
     padding-bottom: 3px;
     margin-top: 1px;
     z-index: 1;
+}
+
+.ovr-label-checkbox{
+    padding-right: 6%;
 }
 
 .ovr-header-profile-menu {

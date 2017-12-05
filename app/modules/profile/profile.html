@@ -4,45 +4,85 @@
     <div class="col-md-6  col-xs-12 ovr-profile-page-left-part">
         <div class="ovr-profile-page-part-title">Moi</div>
         <form class="form-horizontal">
-            <div class="form-group">
-                <form id="form1">
-                    <div class="col-sm-2 col-sm-offset-5">
-                        <img class="ovr-profile-photo img-circle" id="blah" src="#" alt="your image"/>
-                    </div>
-                    <div class="col-sm-5 ovr-profile-photo">
-                        <input type='file' id="imgInp"/>
-                    </div>
-                </form>
-            </div>
-            <div class="form-group">
+            <!--<div class="form-group ovr-profile-photo-part col-xs-12">-->
+            <!--<form id="form1">-->
+            <!--<div class="col-sm-2 col-sm-offset-5">-->
+            <!--<img class="ovr-profile-photo" id="blah" src="#" />-->
+            <!--</div>-->
+            <!--<div class="col-sm-5 ovr-profile-photo">-->
+            <!--<input type='file' id="imgInp"/>-->
+            <!--</div>-->
+            <!--</form>-->
+            <!--</div>-->
+            <div class="form-group  col-xs-12">
                 <label for="nom" class="col-sm-2 control-label">Nom</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nom" placeholder="Nom">
+                    <input type="text" ng-model="name" class="form-control" id="nom" placeholder="Nom">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group  col-xs-12">
                 <label for="Prénom" class="col-sm-2 control-label">Prénom</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Prénom" placeholder="Prénom">
+                    <input type="text" ng-model="surname" class="form-control" id="Prénom" placeholder="Prénom">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group  col-xs-12">
                 <label for="ville" class="col-sm-2 control-label">Ville</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ville" placeholder="Ville">
+                    <input type="text" ng-model="city" class="form-control" id="ville" placeholder="Ville">
                 </div>
             </div>
+            <div class="form-group col-xs-12">
+                <button class="col-sm-2 col-sm-offset-6 ovr-button" data-ng-click="updateProfile()"><span
+                        class="ovr-text-connexion">Enregistrer</span></button>
+            </div>
         </form>
-
     </div>
     <!-- Level part-->
     <div class="col-md-6 col-xs-12 ovr-profile-page-right-part">
         <div class="ovr-profile-page-part-title">Mon niveau</div>
-        <div class="input-box">
-            <input type="file" id="file" class="input-text" ngf-change="onChange($files)" ngf-select ng-model="picFile"
-                   name="attachement"
-                   accept="image/png, image/jpeg, image/jpg, application/msword, application/vnd.ms-excel, application/pdf "/>
-        </div>
-        <img ngf-src="picFile[0]" class="thumb"/>
+        <form class="form-horizontal">
+            <div class="form-group  col-xs-12">
+                <label for="nom" class="col-sm-2 control-label">Type</label>
+                <div class="col-sm-10 ovr-checkbox-zone">
+                    <input type="checkbox" id="montagne">
+                    <label class="ovr-label-checkbox" for="montagne">
+                        Montagne
+                    </label>
+                    <label class="ovr-label-checkbox">
+                        <input type="checkbox" id="enduro"> Enduro
+                    </label>
+                    <label class="ovr-label-checkbox">
+                        <input type="checkbox" id="allMountain"> All Mountain
+                    </label>
+                    <label class="ovr-label-checkbox">
+                        <input type="checkbox" id="downHill"> Down Hill
+                    </label>
+                </div>
+            </div>
+            <div class="form-group  col-xs-12">
+                <label for="nom" class="col-sm-2 control-label">Terrain</label>
+                <div class="col-sm-10 ovr-checkbox-zone">
+                    <input type="checkbox" id="montagne2">
+                    <label class="ovr-label-checkbox" for="montagne2">
+                        Montagne
+                    </label>
+                    <label class="ovr-label-checkbox">
+                        <input type="checkbox" id="vallonee"> Vallonée
+                    </label>
+                    <label class="ovr-label-checkbox">
+                        <input type="checkbox" id="Plaine"> Plaine
+                    </label>
+                </div>
+            </div>
+            <div class="form-group  col-xs-12">
+                <label for="ville" class="col-sm-2 control-label">Ville</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ville2" placeholder="Ville">
+                </div>
+            </div>
+
+        </form>
+
     </div>
 </div>

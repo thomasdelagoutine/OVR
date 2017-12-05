@@ -6,10 +6,13 @@ app.controller('profileController', ['$scope', '$location',
 
         $scope.profilePhoto = null;
         $scope.profilePhotoToDisplay = null;
+        $scope.name = "";
+        $scope.surname ="";
+        $scope.city ="";
 
-        $scope.isImage = function(ext) {
-            if(ext) {
-                return ext == "jpg" || ext == "jpeg"|| ext == "gif" || ext=="png"
+        $scope.isImage = function (ext) {
+            if (ext) {
+                return ext == "jpg" || ext == "jpeg" || ext == "gif" || ext == "png"
             }
         };
 
@@ -20,14 +23,30 @@ app.controller('profileController', ['$scope', '$location',
 
                 reader.onload = function (e) {
                     $('#blah').attr('src', e.target.result);
-                }
+                };
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        $("#imgInp").change(function(){
+        $("#imgInp").change(function () {
             readURL(this);
         });
+
+
+        $scope.updateProfile = function () {
+            console.log($scope.name);
+            var currentUser = firebase.auth().currentUser;
+            if ($scope.name !== "" && $scope.surname !== "" && $scope.city !== "" ){
+                firebase.database().ref('user/' + currentUser.uid).set({
+                    username:  currentUser.displayName,
+                    surname : $scope.surname,
+                    name: $scope.name,
+                    city: $scope.city
+                });
+            }else{
+                console.log("champs vide");
+            }
+        }
 
     }]);
