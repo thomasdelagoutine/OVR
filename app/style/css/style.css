@@ -79,7 +79,7 @@ footer {
     border-radius: 4px;
 }
 
-.ovr-checkbox-zone{
+.ovr-checkbox-zone {
     margin-top: 10px;
 }
 
@@ -98,7 +98,7 @@ footer {
     z-index: 1;
 }
 
-.ovr-label-checkbox{
+.ovr-label-checkbox {
     padding-right: 6%;
 }
 
@@ -263,6 +263,12 @@ a:hover {
     text-align: center;
     border-radius: 4px;
     font-weight: bold;
+}
+
+.ovr-confirmation-message {
+    text-align: center;
+    font-size: 11pt;
+    font-weight: bolder;
 }
 
 .ovr-main-tile {

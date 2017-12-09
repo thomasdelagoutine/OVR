@@ -36,6 +36,9 @@
                 <button class="col-sm-2 col-sm-offset-6 ovr-button" data-ng-click="updateProfile()"><span
                         class="ovr-text-connexion">Enregistrer</span></button>
             </div>
+            <div class="form-group col-xs-12" ng-if="displayConfirmationMessage">
+                <p class="col-sm-4 col-sm-offset-5 ovr-confirmation-message">Modification sauvegardées ! </p>
+            </div>
         </form>
     </div>
     <!-- Level part-->
@@ -81,8 +84,6 @@
                     <input type="text" class="form-control" id="ville2" placeholder="Ville">
                 </div>
             </div>
-
         </form>
-
     </div>
 </div>

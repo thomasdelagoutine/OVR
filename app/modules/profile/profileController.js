@@ -6,9 +6,9 @@ app.controller('profileController', ['$scope', '$location',
 
         $scope.profilePhoto = null;
         $scope.profilePhotoToDisplay = null;
-        $scope.name = "";
-        $scope.surname ="";
-        $scope.city ="";
+        $scope.displayConfirmationMessage = false;
+        var currentUser = firebase.auth().currentUser;
+        _getProfileInfo();
 
         $scope.isImage = function (ext) {
             if (ext) {
@@ -36,17 +36,28 @@ app.controller('profileController', ['$scope', '$location',
 
         $scope.updateProfile = function () {
             console.log($scope.name);
-            var currentUser = firebase.auth().currentUser;
-            if ($scope.name !== "" && $scope.surname !== "" && $scope.city !== "" ){
+            currentUser = firebase.auth().currentUser;
+            if ($scope.name !== "" && $scope.surname !== "" && $scope.city !== "") {
                 firebase.database().ref('user/' + currentUser.uid).set({
-                    username:  currentUser.displayName,
-                    surname : $scope.surname,
+                    username: currentUser.displayName,
+                    surname: $scope.surname,
                     name: $scope.name,
                     city: $scope.city
                 });
-            }else{
+                $scope.displayConfirmationMessage = true;
+            } else {
                 console.log("champs vide");
             }
+        };
+
+        function _getProfileInfo() {
+            return firebase.database().ref('/user/' + currentUser.uid).once('value').then(function (snapshot) {
+                var aProfile = snapshot.val();
+                $scope.name = aProfile.name;
+                $scope.surname = aProfile.surname;
+                $scope.city = aProfile.city;
+                $scope.$apply();
+            });
         }
 
     }]);
