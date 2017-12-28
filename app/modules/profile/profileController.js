@@ -1,8 +1,8 @@
 /**
  * Created by Thomas on 26/08/2017.
  */
-app.controller('profileController', ['$scope', '$location',
-    function ($scope, $location) {
+app.controller('profileController', ['$scope', '$location', 'profileService',
+    function ($scope, $location, profileService) {
 
         $scope.profilePhoto = null;
         $scope.profilePhotoToDisplay = null;
@@ -35,18 +35,12 @@ app.controller('profileController', ['$scope', '$location',
 
 
         $scope.updateProfile = function () {
-            console.log($scope.name);
             currentUser = firebase.auth().currentUser;
             if ($scope.name !== "" && $scope.surname !== "" && $scope.city !== "") {
-                firebase.database().ref('user/' + currentUser.uid).set({
-                    username: currentUser.displayName,
-                    surname: $scope.surname,
-                    name: $scope.name,
-                    city: $scope.city
-                });
+                profileService.updateProfile(currentUser.uid, currentUser.displayName, $scope.surname, $scope.name, $scope.city);
                 $scope.displayConfirmationMessage = true;
             } else {
-                console.log("champs vide");
+                console.log("Champs vide");
             }
         };
 
