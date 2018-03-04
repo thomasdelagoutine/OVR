@@ -28,6 +28,10 @@ app.config(['$routeProvider',
                 templateUrl : 'modules/profile/profile.html',
                 controller: 'profileController'
             })
+            .when('/trace', {
+                templateUrl : 'modules/trace/trace.html',
+                controller: 'traceController'
+            })
             .otherwise({
                 redirectTo: '/connexion'
             });

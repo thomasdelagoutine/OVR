@@ -9,5 +9,9 @@ app.controller('mainMenuController', ['$scope', '$location',
             
         }
 
+        $scope.openTrace = function () {
+            $location.path("/trace");
+        }
+
     }]);
 
