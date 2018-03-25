@@ -15,7 +15,7 @@
     <script src="library/js/jquery-3.1.1.js"></script>
     <script src="style/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvYx5o4kCzSqnJGrika3kUxNj33KEgLUo&callback=initMap"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script>
         // Initialize Firebase
@@ -52,15 +52,15 @@
         <img class="ovr-profile-menu-photo" src="img/default_profile.png"/>
         <span class="ovr-profile-menu-arrow" ng-click="displayProfileMenu()">
             <i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-    <div ng-show="isDisplayProfileMenu" class="ovr-displayed-profile-menu">
-        <ul class="ovr-profile-menu-list">
-            <li><span>Mes propositions</span></li>
-            <li><span>Mes participation</span></li>
-            <li><span>Mes avantages</span></li>
-            <li data-ng-click="openProfile()"><span >Mon profil</span></li>
-            <li data-ng-click="signOut()"><span >Se deconnecter</span></li>
-        </ul>
-    </div>
+        <div ng-show="isDisplayProfileMenu" class="ovr-displayed-profile-menu">
+            <ul class="ovr-profile-menu-list">
+                <li><span>Mes propositions</span></li>
+                <li><span>Mes participation</span></li>
+                <li><span>Mes avantages</span></li>
+                <li data-ng-click="openProfile()"><span>Mon profil</span></li>
+                <li data-ng-click="signOut()"><span>Se deconnecter</span></li>
+            </ul>
+        </div>
     </div>
 </div>
 
