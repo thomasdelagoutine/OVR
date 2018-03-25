@@ -1,8 +1,8 @@
 /**
  * Created by Thomas on 13/08/2017.
  */
-app.controller('registrationController', ['$scope', 'profileService',
-    function ($scope, profileService) {
+app.controller("registrationController", ["$scope", "profileService", "$firebaseAuth",
+    function ($scope, profileService, $firebaseAuth) {
         $scope.inscriptionError = "";
         $scope.errorRegistration = false;
         $scope.emailSent = false;
@@ -37,7 +37,7 @@ app.controller('registrationController', ['$scope', 'profileService',
                             profileService.updateProfile(user.uid, displayName, $scope.surname, $scope.name, $scope.city);
                             user.sendEmailVerification().then(function () {
                                 // Email Verification sent!
-                                console.log('Verification du mail envoyé !');
+                                console.log("Verification du mail envoyé !");
                                 firebase.auth().signOut().then(function () {
                                     $scope.emailSent = true;
                                     $scope.$digest();

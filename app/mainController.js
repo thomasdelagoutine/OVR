@@ -6,8 +6,12 @@ app.run(function ($rootScope) {
 });
 
 
-app.controller('mainCtrl', ['$scope', '$location',
-    function ($scope, $location) {
+app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject','$firebaseAuth',
+    function ($scope, $location, $firebaseObject, $firebaseAuth) {
+        var ref = firebase.database().ref();
+        // download the data into a local object
+        $scope.data = $firebaseObject(ref);
+        var auth = $firebaseAuth();
         //Variables
         $scope.isDisplayProfileMenu = false;
 
@@ -16,9 +20,8 @@ app.controller('mainCtrl', ['$scope', '$location',
          */
         $scope.signOut = function () {
             $scope.displayProfileMenu();
-            firebase.auth().signOut().then(function () {
+            auth.$signOut().then(function () {
                 $location.path("/connexion");
-                $scope.$apply();
             }).catch(function (error) {
                 // An error happened.
             });
@@ -28,7 +31,7 @@ app.controller('mainCtrl', ['$scope', '$location',
          * Function to check if the user is connected.
          */
         $scope.checkIfUserSignIn = function () {
-            $scope.user = firebase.auth().currentUser;
+            $scope.user = auth.$getAuth();
             return $scope.user;
         };
 

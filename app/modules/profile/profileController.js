@@ -1,8 +1,14 @@
 /**
  * Created by Thomas on 26/08/2017.
  */
-app.controller('profileController', ['$scope', '$location', 'profileService',
-    function ($scope, $location, profileService) {
+app.controller('profileController', ['$scope', '$location', 'profileService', 'mainService', "$firebaseAuth",
+    function ($scope, $location, profileService, mainService, $firebaseAuth) {
+
+        var user = mainService.user;
+        if (user) {
+            $location.path("/connexion");
+
+        }
 
         $scope.profilePhoto = null;
         $scope.profilePhotoToDisplay = null;

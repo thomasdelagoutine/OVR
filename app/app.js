@@ -1,7 +1,7 @@
 /**
  * Created by Thomas on 23/07/2017.
  */
-var app = angular.module('ovrApp', ['ngRoute']);
+var app = angular.module('ovrApp', ['ngRoute','firebase']);
 
 app.config(['$routeProvider',
     function($routeProvider) {
