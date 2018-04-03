@@ -49,6 +49,10 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject','$firebaseA
         $scope.openProfile = function () {
             $scope.displayProfileMenu();
             $location.path("/profile");
+        };
+
+        $scope.goMainPage = function () {
+            $location.path("/mainMenu");
         }
     }]);
 

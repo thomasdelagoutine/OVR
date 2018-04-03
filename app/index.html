@@ -45,8 +45,8 @@
 </head>
 <body class="cd-body" ng-controller="mainCtrl">
 <div class="col-xs-12 col-md-12 ovr-header">
-    <h1 class="ovr-header-title">OVR</h1>
-    <p class="ovr-header-sub-title">On Va Rouler</p>
+    <h1 class="ovr-header-title" data-ng-click="goMainPage()">OVR</h1>
+    <p class="ovr-header-sub-title" data-ng-click="goMainPage()">On Va Rouler</p>
     <div class="ovr-profile-menu" ng-show="checkIfUserSignIn()">
         <span class="ovr-profile-menu-name">{{user.displayName}}</span>
         <img class="ovr-profile-menu-photo" src="img/default_profile.png"/>
@@ -62,10 +62,6 @@
             </ul>
         </div>
     </div>
-</div>
-
-
-<!--<button class="ovr-button-deco">Deconnexion</button>-->
 </div>
 <div ng-view class="col-xs-12 col-md-12 ovr-body"></div>
 <footer class="col-xs-12 col-md-12 ovr-footer">2017 - Thomas de Lagoutine</footer>

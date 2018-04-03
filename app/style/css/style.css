@@ -213,6 +213,10 @@ a:hover {
 
 }
 
+.ovr-header-title:hover {
+    cursor: pointer;
+}
+
 .ovr-header-sub-title {
     font-family: subTitleFont;
     text-align: center;
